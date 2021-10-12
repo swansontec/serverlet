@@ -1,0 +1,69 @@
+{
+  "name": "serverlet",
+  "version": "0.1.0",
+  "description": "Use ordinary functions to serve HTTP requests",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:swansontec/serverlet.git"
+  },
+  "license": "MIT",
+  "author": "William Swanson",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./lib/index.js",
+  "module": "./lib/serverlet.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "lib/*",
+    "README.md",
+    "src/*"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "fix": "eslint . --fix",
+    "flow": "flow",
+    "lib": "rollup -c",
+    "lint": "eslint .",
+    "precommit": "lint-staged && npm-run-all flow types",
+    "prepare": "husky install; npm-run-all clean -p flow lib types",
+    "types": "tsc",
+    "verify": "npm-run-all flow lint types"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.14.0",
+    "eslint-config-standard-kit": "0.15.1",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^6.0.1",
+    "flow-bin": "^0.161.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^10.5.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.58.0",
+    "rollup-plugin-flow-entry": "^0.3.6",
+    "rollup-plugin-mjs-entry": "^0.1.1",
+    "typescript": "^4.1.2"
+  }
+}

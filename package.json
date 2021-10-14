@@ -13,16 +13,26 @@
       "import": "./lib/index.mjs",
       "require": "./lib/index.js"
     },
+    "./express": {
+      "import": "./express.mjs",
+      "require": "./express.js"
+    },
     "./package.json": "./package.json"
   },
   "main": "./lib/index.js",
   "module": "./lib/serverlet.js",
   "types": "./lib/index.d.ts",
   "files": [
-    "CHANGELOG.md",
-    "lib/*",
-    "README.md",
-    "src/*"
+    "/CHANGELOG.md",
+    "/express.d.ts",
+    "/express.js.flow",
+    "/express.js",
+    "/express.mjs",
+    "/lib/*",
+    "/package.json",
+    "/README.md",
+    "/src/adapters/express.flow.js",
+    "/src/index.flow.js"
   ],
   "scripts": {
     "clean": "rimraf lib",

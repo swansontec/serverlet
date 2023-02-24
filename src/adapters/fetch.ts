@@ -63,12 +63,13 @@ export function makeFetchFunction(
     opts: FetchOptions = {}
   ): Promise<FetchResponse> {
     const { body = '', method = 'GET', headers = {} } = opts
+    const { host, pathname, search } = new URL(uri)
 
     const request: FetchRequest = {
       method,
-      path: uri.replace(/https?:\/\/[^/]*/, ''),
+      path: pathname + search,
       version: 'HTTP/1.1',
-      headers,
+      headers: { ...headers, host },
       body: typeof body === 'string' ? utf8.parse(body) : new Uint8Array(body)
     }
     const response = await serverlet(request)

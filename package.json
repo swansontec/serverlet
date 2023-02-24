@@ -1,6 +1,6 @@
 {
   "name": "serverlet",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Use ordinary functions to serve HTTP requests",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
     "/express.js.flow",
     "/express.js",
     "/express.mjs",
-    "/lib/*",
+    "/lib/",
     "/package.json",
     "/README.md",
     "/src/adapters/express.flow.js",

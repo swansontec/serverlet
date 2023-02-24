@@ -4,6 +4,7 @@
     "declarationDir": "lib",
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
+    "lib": ["es2015", "dom"],
     "strict": true
   },
   "include": ["src"]

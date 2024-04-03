@@ -1,6 +1,6 @@
 {
   "name": "serverlet",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Use ordinary functions to serve HTTP requests",
   "repository": {
     "type": "git",

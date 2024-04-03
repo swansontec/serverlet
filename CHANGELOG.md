@@ -1,5 +1,11 @@
 # serverlet
 
+## Unreleased
+
+## v0.1.3 (2024-04-03)
+
+- fixed: Improve compatibility with modern TypeScript versions.
+
 ## v0.1.2 (2023-02-24)
 
 - added: Emulate the `Host` header in `makeFetchFunction`.

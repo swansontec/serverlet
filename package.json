@@ -11,11 +11,13 @@
   "exports": {
     ".": {
       "import": "./lib/index.mjs",
-      "require": "./lib/index.js"
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
     },
     "./express": {
       "import": "./express.mjs",
-      "require": "./express.js"
+      "require": "./express.js",
+      "types": "./express.d.ts"
     },
     "./package.json": "./package.json"
   },

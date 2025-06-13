@@ -17,7 +17,7 @@ const helloRoute = (request: HttpRequest): HttpResponse => {
 You can use a serverlet as an Express route:
 
 ```js
-import { makeExpressRoute } from 'serverlet/express'
+import { makeExpressRoute } from 'serverlet'
 
 app.get('/', makeExpressRoute(helloRoute))
 ```

@@ -1,4 +1,4 @@
-import { Request, RequestHandler } from 'express'
+import type { Request, RequestHandler } from 'express'
 
 import { HttpHeaders, HttpRequest, Serverlet } from '../types.js'
 

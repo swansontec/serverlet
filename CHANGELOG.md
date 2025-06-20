@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- changed: Moved `makeExpressRoute` to the main `serverlet` import, instead of `serverlet/express`.
+- removed: Flow type definitions.
+
 ## v0.1.3 (2024-04-03)
 
 - fixed: Improve compatibility with modern TypeScript versions.

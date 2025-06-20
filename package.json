@@ -10,42 +10,29 @@
   "author": "William Swanson",
   "exports": {
     ".": {
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.js",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js",
       "types": "./lib/index.d.ts"
-    },
-    "./express": {
-      "import": "./express.mjs",
-      "require": "./express.js",
-      "types": "./express.d.ts"
     },
     "./package.json": "./package.json"
   },
-  "main": "./lib/index.js",
-  "module": "./lib/serverlet.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "types": "./lib/index.d.ts",
   "files": [
     "/CHANGELOG.md",
-    "/express.d.ts",
-    "/express.js.flow",
-    "/express.js",
-    "/express.mjs",
     "/lib/",
     "/package.json",
-    "/README.md",
-    "/src/adapters/express.flow.js",
-    "/src/index.flow.js"
+    "/README.md"
   ],
   "scripts": {
     "clean": "rimraf lib",
     "fix": "eslint . --fix",
-    "flow": "flow",
-    "lib": "rollup -c",
+    "lib": "rollup -c && echo '{\"type\":\"module\"}' > lib/esm/package.json",
     "lint": "eslint .",
-    "precommit": "lint-staged && npm-run-all flow types",
-    "prepare": "husky install; npm-run-all clean -p flow lib types",
-    "types": "tsc",
-    "verify": "npm-run-all flow lint types"
+    "precommit": "lint-staged && npm-run-all -p lib types",
+    "prepare": "husky install && npm-run-all clean -p lib types",
+    "types": "tsc && node ./scripts/fix-express.mjs"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint"
@@ -62,20 +49,16 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.14.0",
     "eslint-config-standard-kit": "0.15.1",
-    "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^6.0.1",
-    "flow-bin": "^0.161.0",
     "husky": "^7.0.2",
     "lint-staged": "^10.5.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.58.0",
-    "rollup-plugin-flow-entry": "^0.3.6",
-    "rollup-plugin-mjs-entry": "^0.1.1",
     "typescript": "^4.1.2"
   }
 }

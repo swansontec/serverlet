@@ -1,9 +1,5 @@
 # Build output:
 /lib/
-/express.d.ts
-/express.js
-/express.js.flow
-/express.mjs
 
 # Package managers:
 node_modules/

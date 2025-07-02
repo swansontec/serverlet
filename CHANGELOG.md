@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.2.0 (2025-07-02)
+
 - changed: Moved `makeExpressRoute` to the main `serverlet` import, instead of `serverlet/express`.
 - removed: Flow type definitions.
 
